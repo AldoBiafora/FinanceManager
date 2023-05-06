@@ -1,0 +1,107 @@
+/* ::ng-deep .warning{
+    color:white;
+    background: #F44336 !important;
+    justify-content: center;
+}
+
+::ng-deep .confirm{
+    color:white;
+    background: green !important;
+    justify-content: center;
+}
+
+.btn-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login {
+    margin: 20px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-login {
+    background: url(../../../assets/finance-login.svg) no-repeat;
+    background-size: 500px;
+    width: 560px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 50px;
+   
+}
+
+.card-custom {
+    height: 700px;
+    width: 700px;
+    margin-top: 250px;
+    background: rgba(255,255,255,0.5);
+}
+
+
+.img-custom {
+    z-index: 2;
+    margin-bottom: -250px;
+    margin-top: -300px;
+    margin-right: 80px;
+} */
+
+@media screen and (max-width: 480px) {
+    .login-card {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #44492f !important;
+        color: #fff !important;
+    }
+
+    .form-login {
+        background-color: #fff;
+        color: black;
+        margin-bottom: 200px;
+        height: 400px;
+        padding-bottom: 50px;
+        border-radius: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .title{
+        color: #44492f;
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 60px;
+        font-weight: 400;
+    }
+
+    ::ng-deep .warning{
+        color:white;
+        background: #F44336 !important;
+        justify-content: center;
+    }
+    
+    ::ng-deep .confirm{
+        color:white;
+        background: green !important;
+        justify-content: center;
+    }
+
+    .spinner {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 25px;
+        margin-bottom: 50px;
+    }
+
+
+}

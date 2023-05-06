@@ -1,0 +1,15 @@
+<div class="confirm-dialog">
+  <h2 class="fs-30" mat-dialog-title>{{data.title}}</h2>
+  <mat-dialog-content class="mat-typography content-custom">
+    <p class="fs-25" [innerHtml]="data.message"></p>
+  </mat-dialog-content>
+  <div class="fs-25" *ngIf="data.mode == 1">
+    <button mat-button mat-dialog-close class="margin-x-20">Annulla</button>
+    <button mat-raised-button color="accent" cdkFocusInitial (click)="onConfirm()">Conferma</button>
+  </div>
+
+  <div class="fs-25" *ngIf="data.mode == 0">
+    <button mat-raised-button color="accent" cdkFocusInitial (click)="onConfirm()">OK</button>
+  </div>
+</div>
+

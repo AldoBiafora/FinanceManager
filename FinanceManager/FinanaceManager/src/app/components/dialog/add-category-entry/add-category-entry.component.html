@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="wrapper-header">
+        <h3 class="title-custom">Aggiungi Categoria</h3>
+        <button mat-icon-button color="accent" [mat-dialog-close]="false">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </div>
+    <hr style="background-color: #ff4081 !important;">
+    <div class="form-category">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="radio-button">
+                <mat-radio-group formControlName="Type" aria-label="Select an option">
+                    <mat-radio-button value="Uscite">Spese</mat-radio-button>
+                    <mat-radio-button class="margin-x-10" value="Entrate">Entrate</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="form-position">
+                <mat-form-field [style.width.%]="80" color="accent" appearance="fill">
+                    <mat-label>Nome Categoria</mat-label>
+                    <input  matInput formControlName="Name" autocomplete="off">
+                  </mat-form-field>
+                </div>
+                <div class="form-position">
+                    <button [style.width.%]="80" mat-raised-button color="accent" type="submit" [disabled]="!form.valid">Aggiungi</button>                 
+                </div>
+        </form>
+    </div>
+</div>

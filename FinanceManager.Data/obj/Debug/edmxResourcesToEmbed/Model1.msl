@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LocaleFinanceManagerModelStoreContainer" CdmEntityContainer="FinanceManagerEntities">
+    <FunctionImportMapping FunctionImportName="SP_OPERATION_FOR_CATEGORY" FunctionName="Locale.FinanceManagerModel.Store.SP_OPERATION_FOR_CATEGORY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Locale.FinanceManagerModel.SP_OPERATION_FOR_CATEGORY_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ContoId" ColumnName="ContoId" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+          <ScalarProperty Name="NumberOperation" ColumnName="NumberOperation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ContoCorrente">
+      <EntityTypeMapping TypeName="Locale.FinanceManagerModel.ContoCorrente">
+        <MappingFragment StoreEntitySet="ContoCorrente">
+          <ScalarProperty Name="NameContoCorrente" ColumnName="NameContoCorrente" />
+          <ScalarProperty Name="WhenCreated" ColumnName="WhenCreated" />
+          <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ContoId" ColumnName="ContoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movimenti">
+      <EntityTypeMapping TypeName="Locale.FinanceManagerModel.Movimenti">
+        <MappingFragment StoreEntitySet="Movimenti">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="WhenCreated" ColumnName="WhenCreated" />
+          <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ContoId" ColumnName="ContoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UsciteId" ColumnName="UsciteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Locale.FinanceManagerModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CanceledOn" ColumnName="CanceledOn" />
+          <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="Locale.FinanceManagerModel.Categories">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

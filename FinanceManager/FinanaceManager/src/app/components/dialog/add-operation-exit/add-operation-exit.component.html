@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="wrapper-header">
+        <h3 class="title-custom">Aggiungi Movimento</h3>
+        <button mat-icon-button color="accent" [mat-dialog-close]="false">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </div>
+    <hr color="#ff4081">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="radio-button">
+            <mat-radio-group formControlName="Type" aria-label="Select an option">
+                <mat-radio-button class="margin-custom" value="Uscite">Spese</mat-radio-button>
+                <mat-radio-button class="margin-custom" value="Entrate">Entrate</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="form-position margin-for-input">
+              <mat-form-field [style.width.%]="80" color="accent" appearance="fill">
+                <mat-label>Totale €</mat-label>
+                <input type="number" matInput formControlName="total" autocomplete="off">
+              </mat-form-field>
+              <mat-form-field [style.width.%]="80" color="accent" appearance="fill">
+                  <mat-select formControlName="CatId" placeholder="Categorie">
+                    <mat-option *ngFor="let cat of allCategoryExit" [value]="cat.CategoryId">
+                      {{cat.Name}}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <mat-form-field [style.width.%]="80" color="accent" appearance="fill">
+                <mat-label>Note</mat-label>
+                <textarea matInput formControlName="note" autocomplete="off" matInput placeholder="Es. Uscita per..."></textarea>
+              </mat-form-field>
+        </div>
+            <div class="form-position btn">
+                <button [style.width.%]="80" mat-raised-button color="accent" type="submit" [disabled]="!form.valid">Aggiungi</button>                 
+            </div>
+    </form>
+</div>

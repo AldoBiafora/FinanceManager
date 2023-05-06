@@ -1,0 +1,7 @@
+.mat-tab-label {
+    color: #fff !important;
+}
+
+.mat-tab-label.mat-tab-label-active {
+    color: #fff !important;
+}

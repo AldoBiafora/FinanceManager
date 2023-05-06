@@ -1,0 +1,15 @@
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\FinanceManager.Core.dll.config
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\FinanceManager.Core.dll
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\FinanceManager.Core.pdb
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\EntityFramework.dll
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\EntityFramework.SqlServer.dll
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\FinanceManager.Data.dll
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\FinanceManager.Data.pdb
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\FinanceManager.Data.dll.config
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\EntityFramework.xml
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\bin\Debug\EntityFramework.SqlServer.xml
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\obj\Debug\FinanceManager.Core.csproj.AssemblyReference.cache
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\obj\Debug\FinanceManager.Core.csproj.CoreCompileInputs.cache
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\obj\Debug\FinanceManager.Core.csproj.CopyComplete
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\obj\Debug\FinanceManager.Core.dll
+F:\PROGETTI\Progetti.Lavoro.PcPersonale\Progetti Personali\FinanceManager\FinanceManager.Core\obj\Debug\FinanceManager.Core.pdb

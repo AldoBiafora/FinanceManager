@@ -1,0 +1,26 @@
+<div class="wrapper-header">
+    <h3 class="title-custom">Dettaglio Movimento</h3>
+    <button mat-icon-button color="accent" [mat-dialog-close]="false">
+        <mat-icon>clear</mat-icon>
+    </button>
+</div>
+<hr color="#ff4081">
+<div class="flex-title">
+    <p>Categoria: </p>
+    <span class="name-cat">{{nameCat}}</span>
+    
+</div>
+<div class="container">
+    <mat-card class="example-card scale-in-top" *ngFor="let o of operazioni">
+        <mat-card-content>
+            <mat-list role="list">
+                <mat-list-item role="listitem">{{o.WhenCreated}}</mat-list-item>
+                <mat-list-item role="listitem">{{o.TotalAmount | currency:'EUR':'symbol-narrow'}}</mat-list-item>
+                <mat-list-item role="listitem">{{o.Note}}</mat-list-item>
+            </mat-list>
+        </mat-card-content>
+        <div class="container-btn-add">
+            <button class="btn-custom" color="accent" mat-raised-button (click)="deleteOperation(o)">Elimina Movimento</button>
+        </div>
+    </mat-card>
+</div>

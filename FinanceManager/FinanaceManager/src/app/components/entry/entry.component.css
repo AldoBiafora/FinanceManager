@@ -1,0 +1,82 @@
+@media screen and (max-width: 480px) {
+  #myChart {
+    height: 320px !important;
+    width: 350px !important;
+  }
+
+    .chart {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-position{
+        position: absolute;
+        margin-top: 20px;
+    }
+
+    .list-custom {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-list {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    mat-list mat-list-item {
+        height: 45px;
+        width: 320px;
+/*         background-color: rebeccapurple; */
+        border-radius: 25px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 2px 3px 8px 5px rgba(0,0,0,0.30); 
+        box-shadow: 2px 3px 8px 5px rgba(0,0,0,0.30);
+    }
+
+    .label-total {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #000000;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .postion-bank {
+        margin-right: 15px;
+        color: #FF4081;
+    }
+    
+    .position-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cat-name {
+        font-size: 16px;
+    }
+
+    .total-exit {
+        font-size: 16px;
+    }
+
+    .margin-for-footer {
+        margin-bottom: 100px !important;
+    }
+
+    /* .canvas-size {
+        height: 450px !important;
+        width: 400px !important;
+    } */
+
+}

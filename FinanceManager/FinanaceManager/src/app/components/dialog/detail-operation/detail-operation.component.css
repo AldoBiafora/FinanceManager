@@ -1,0 +1,63 @@
+@media screen and (max-width: 480px) {
+    .wrapper-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+        margin-bottom: 10px;
+    }
+
+    .title-custom {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .name-cat {
+        font-weight: 500;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    mat-card {
+        margin-bottom: 20px;
+        -webkit-box-shadow: 2px 3px 8px 5px rgba(0,0,0,0.30) !important; 
+        box-shadow: 2px 3px 8px 5px rgba(0,0,0,0.30) !important;
+    }
+
+    mat-card-header p {
+        margin-left: -20px;
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .container-btn-add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .flex-title {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+    }
+
+    .flex-title p {
+        font-size: 18px;
+    }
+
+    ::ng-deep .warning{
+        color:white;
+        background: #F44336 !important;
+        justify-content: center;
+    }
+    
+    ::ng-deep .confirm{
+        color:white;
+        background: green !important;
+        justify-content: center;
+    }
+
+    
+
+}

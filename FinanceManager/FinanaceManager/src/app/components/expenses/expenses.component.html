@@ -1,0 +1,33 @@
+<h5 class="label-total">
+    <mat-icon class="postion-bank" title="Conto Corrente">account_balance_wallet</mat-icon>
+    <div class="position-info">
+        {{nameConto}}
+        {{totalContoCorrente | currency:'EUR':'symbol-narrow'}}
+    </div>
+</h5>
+<div class="chart">
+    <img class="logo-position" src="../../../assets/finance-logo-removebg-preview.png" alt="" height="220" width="220">
+        <canvas id="myChart" width="300" height="250" #mychart
+        ></canvas>
+</div>
+<div class="container-list">
+    <mat-list class="list-custom" role="list">
+        <mat-list-item class="item-flex scale-in-top" *ngFor="let o of operazioni" role="listitem">
+            <button mat-icon-button color="accent" (click)="openDetailOperationExit(o)">
+                <mat-icon>format_list_bulleted</mat-icon>
+            </button>
+            <span class="cat-name">{{o.CategoryName}}</span>
+            <span class="total-exit">{{o.TotalAmount  | currency:'EUR':'symbol-narrow'}}</span>
+        </mat-list-item>
+    </mat-list>
+</div>
+<hr color="#ff4081" [style.width.%]="80">
+<div class="container-list margin-for-footer">
+    <mat-list class="list-custom" role="list">
+        <mat-list-item class="item-flex" role="listitem">
+            <mat-icon color="accent">category</mat-icon>
+            <span class="cat-name">Totale Uscite</span>
+            <span class="total-exit">{{totalExit | currency:'EUR':'symbol-narrow'}}</span>
+        </mat-list-item>
+    </mat-list>
+</div>

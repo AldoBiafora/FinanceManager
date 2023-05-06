@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%; 
+    overflow-y: hidden !important;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    padding: 10px;
+}
+
+.margin-x-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+    position: relative;
+    height: inherit;
+    justify-content: space-between !important;
+}
+
+@media screen and (max-width: 480px) {
+  .spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        width: 100%;
+    }
+
+  .footer {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #44492f !important;
+    color: white;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-footer {
+      margin-bottom: 25px;
+  }
+
+  .position-foot {
+      margin-top: 100px;
+  }
+
+  th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding: 8px !important;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    }
+
+    th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+        padding-left: 2px !important; 
+    }
+
+    .mat-tab-group.mat-accent .mat-ink-bar, .mat-tab-nav-bar.mat-accent .mat-ink-bar {
+        width: 150px !important;
+    }
+
+    /* ANIMAZIONI */
+
+    .scale-in-top {
+        -webkit-animation: scale-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation: scale-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @-webkit-keyframes scale-in-top {
+        0% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          -webkit-transform-origin: 50% 0%;
+                  transform-origin: 50% 0%;
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          -webkit-transform-origin: 50% 0%;
+                  transform-origin: 50% 0%;
+          opacity: 1;
+        }
+      }
+      @keyframes scale-in-top {
+        0% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          -webkit-transform-origin: 50% 0%;
+                  transform-origin: 50% 0%;
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          -webkit-transform-origin: 50% 0%;
+                  transform-origin: 50% 0%;
+          opacity: 1;
+        }
+      }
+
+}
+
+

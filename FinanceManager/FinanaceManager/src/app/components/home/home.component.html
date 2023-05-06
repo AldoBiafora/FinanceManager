@@ -1,0 +1,58 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <img src="../../../assets/finance-logo-removebg-preview.png" alt="" height="200" width="200">
+        <mat-list class="list-custom">
+            <mat-list-item>
+                <a mat-button [routerLink]="'./dashboard'" [routerLinkActive]="['is-active']">
+                    Dashboard
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-button [routerLink]="'./bank-account'" [routerLinkActive]="['is-active']">
+                    Movimenti
+                </a>
+            </mat-list-item>
+            <mat-list-item *ngIf="isAdmin">
+                <a mat-button [routerLink]="'./charts'" [routerLinkActive]="['is-active']">
+                    Grafici
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-button [routerLink]="'./categories'" [routerLinkActive]="['is-active']">
+                    Categorie
+                </a>
+            </mat-list-item>
+            <mat-list-item *ngIf="isAdmin">
+                <a mat-button [routerLink]="'./users'" [routerLinkActive]="['is-active']">
+                    Utenti
+                </a>
+            </mat-list-item>
+            <mat-list-item *ngIf="isAdmin">
+                <a mat-button  [routerLink]="'./settings'" [routerLinkActive]="['is-active']">
+                    Impostazioni
+                </a>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+        <mat-toolbar class="toolbar">
+            <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+           <img src="../../../assets/Finance-Manager-Title.png" width="240px" height="120px" alt="">
+            <button mat-icon-button type="button" (click)="logout()">
+                <mat-icon title="logout">logout</mat-icon>
+            </button>  
+        </mat-toolbar>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+  <div class="position-foot">
+
+    <footer class="text-center footer">
+      <p class="text-footer">Finance Manager ©2022-2023</p>
+    </footer>
+  </div>
+  </mat-drawer-container>

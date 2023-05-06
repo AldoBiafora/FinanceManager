@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Locale.FinanceManagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsCanceled" Type="bit" Nullable="false" />
+    <Property Name="Type" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Image" Type="image" />
+  </EntityType>
+  <EntityType Name="ContoCorrente">
+    <Key>
+      <PropertyRef Name="ContoId" />
+    </Key>
+    <Property Name="ContoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="IsCanceled" Type="bit" Nullable="false" />
+    <Property Name="WhenCreated" Type="datetime" />
+    <Property Name="NameContoCorrente" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Movimenti">
+    <Key>
+      <PropertyRef Name="UsciteId" />
+    </Key>
+    <Property Name="UsciteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ContoId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="IsCanceled" Type="bit" Nullable="false" />
+    <Property Name="WhenCreated" Type="datetime" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsCanceled" Type="bit" Nullable="false" />
+    <Property Name="CanceledOn" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Function Name="SP_OPERATION_FOR_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="int" Mode="In" />
+    <Parameter Name="Type" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="LocaleFinanceManagerModelStoreContainer">
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContoCorrente" EntityType="Self.ContoCorrente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movimenti" EntityType="Self.Movimenti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,44 @@
+@media screen and (max-width: 480px) {
+    html, body {
+        /* background-color: #fff !important;
+        color: #fff !important; */
+        background-color: #000000 !important;
+        color: #fff;
+    }
+
+    .example-container {
+        height: 100%;
+    }
+
+    .toolbar {
+        background-color: #44492f !important;
+        color: #fff !important;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+    }
+
+    .is-active, .is-active:focus {
+        color: #000000;
+        background-color: #44492f;
+    }
+
+    mat-list-item a {
+        color: #000000;
+    }
+
+    .list-custom {
+        margin-left: 30px;
+        margin-top: -25px;
+    }
+
+    .content img {
+        height:70px;
+        width: 70px;
+        float:left;
+    }
+
+
+}

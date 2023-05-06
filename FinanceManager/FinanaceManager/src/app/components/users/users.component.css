@@ -1,0 +1,103 @@
+@media screen and (max-width: 480px) {
+    .container-bank {
+        overflow: hidden;
+        margin-bottom: 40px;
+    }
+
+    mat-list mat-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    mat-list mat-list-item span mat-form-field {
+        margin-left: 30px;
+    }
+
+    mat-list mat-list-item.list-date span mat-form-field {
+        margin-left: 30px !important;
+    }
+
+    .info-custom {
+        margin-top: 18px;
+        font-size: 14px;
+    }
+
+    .label {
+        background-color: #44492f;
+        color: white;
+        padding: 15px;
+        width: 115px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 25px;
+    }
+
+    .title-custom {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .container-btn-add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .btn-custom {
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 50px;
+        width: 170px;
+    }
+
+    ::ng-deep .warning{
+        color:white;
+        background: #F44336 !important;
+        justify-content: center;
+    }
+    
+    ::ng-deep .confirm{
+        color:white;
+        background: green !important;
+        justify-content: center;
+    }
+
+    .full-width-table {
+        width: 100%;
+    }
+
+    .wrapper-table {
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    th {
+        text-align: center !important;
+    }
+
+    td {
+       text-align: center;
+    }
+
+  ::ng-deep .warning {
+    color: white;
+    background: #F44336 !important;
+    justify-content: center;
+  }
+
+  ::ng-deep .confirm {
+    color: white;
+    background: green !important;
+    justify-content: center;
+  }
+}

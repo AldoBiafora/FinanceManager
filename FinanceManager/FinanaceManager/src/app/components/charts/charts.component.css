@@ -1,0 +1,35 @@
+#myChart {
+  height: 320px !important;
+  width: 350px !important;
+}
+
+#myChart2 {
+  height: 350px !important;
+  width: 350px !important;
+}
+
+#myChart3 {
+  height: 350px !important;
+  width: 350px !important;
+}
+
+#myChart4 {
+  height: 350px !important;
+  width: 350px !important;
+}
+
+.chart {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-position {
+  position: absolute;
+  margin-top: 20px;
+}
+
+.font-size-24 {
+    font-size: 24px;
+}

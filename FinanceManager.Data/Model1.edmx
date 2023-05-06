@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Locale.FinanceManagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsCanceled" Type="bit" Nullable="false" />
+          <Property Name="Type" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Image" Type="image" />
+        </EntityType>
+        <EntityType Name="ContoCorrente">
+          <Key>
+            <PropertyRef Name="ContoId" />
+          </Key>
+          <Property Name="ContoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="TotalAmount" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="IsCanceled" Type="bit" Nullable="false" />
+          <Property Name="WhenCreated" Type="datetime" />
+          <Property Name="NameContoCorrente" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Movimenti">
+          <Key>
+            <PropertyRef Name="UsciteId" />
+          </Key>
+          <Property Name="UsciteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ContoId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="TotalAmount" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="IsCanceled" Type="bit" Nullable="false" />
+          <Property Name="WhenCreated" Type="datetime" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsCanceled" Type="bit" Nullable="false" />
+          <Property Name="CanceledOn" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <Function Name="SP_OPERATION_FOR_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+          <Parameter Name="Type" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="LocaleFinanceManagerModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContoCorrente" EntityType="Self.ContoCorrente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movimenti" EntityType="Self.Movimenti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Locale.FinanceManagerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FinanceManagerEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SP_OPERATION_FOR_CATEGORY" ReturnType="Collection(Locale.FinanceManagerModel.SP_OPERATION_FOR_CATEGORY_Result)">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="ContoCorrente" EntityType="Locale.FinanceManagerModel.ContoCorrente" />
+          <EntitySet Name="Movimenti" EntityType="Locale.FinanceManagerModel.Movimenti" />
+          <EntitySet Name="Users" EntityType="Locale.FinanceManagerModel.Users" />
+          <EntitySet Name="Categories" EntityType="Locale.FinanceManagerModel.Categories" />
+        </EntityContainer>
+        <ComplexType Name="SP_OPERATION_FOR_CATEGORY_Result">
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="true" />
+          <Property Type="Int32" Name="ContoId" Nullable="true" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
+          <Property Type="Boolean" Name="IsCanceled" Nullable="true" />
+          <Property Type="Int32" Name="NumberOperation" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="ContoCorrente">
+          <Key>
+            <PropertyRef Name="ContoId" />
+          </Key>
+          <Property Name="ContoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="IsCanceled" Type="Boolean" Nullable="false" />
+          <Property Name="WhenCreated" Type="DateTime" Precision="3" />
+          <Property Name="NameContoCorrente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Movimenti">
+          <Key>
+            <PropertyRef Name="UsciteId" />
+          </Key>
+          <Property Name="UsciteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ContoId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="IsCanceled" Type="Boolean" Nullable="false" />
+          <Property Name="WhenCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsCanceled" Type="Boolean" Nullable="false" />
+          <Property Name="CanceledOn" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsCanceled" Type="Boolean" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LocaleFinanceManagerModelStoreContainer" CdmEntityContainer="FinanceManagerEntities" >
+          <FunctionImportMapping FunctionImportName="SP_OPERATION_FOR_CATEGORY" FunctionName="Locale.FinanceManagerModel.Store.SP_OPERATION_FOR_CATEGORY">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Locale.FinanceManagerModel.SP_OPERATION_FOR_CATEGORY_Result">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ContoId" ColumnName="ContoId" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+                <ScalarProperty Name="NumberOperation" ColumnName="NumberOperation" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ContoCorrente">
+            <EntityTypeMapping TypeName="Locale.FinanceManagerModel.ContoCorrente">
+              <MappingFragment StoreEntitySet="ContoCorrente">
+                <ScalarProperty Name="NameContoCorrente" ColumnName="NameContoCorrente" />
+                <ScalarProperty Name="WhenCreated" ColumnName="WhenCreated" />
+                <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ContoId" ColumnName="ContoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movimenti">
+            <EntityTypeMapping TypeName="Locale.FinanceManagerModel.Movimenti">
+              <MappingFragment StoreEntitySet="Movimenti">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="WhenCreated" ColumnName="WhenCreated" />
+                <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ContoId" ColumnName="ContoId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UsciteId" ColumnName="UsciteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Locale.FinanceManagerModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CanceledOn" ColumnName="CanceledOn" />
+                <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="Locale.FinanceManagerModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IsCanceled" ColumnName="IsCanceled" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

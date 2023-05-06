@@ -1,0 +1,62 @@
+<mat-tab-group color="accent"  mat-stretch-tabs="false" mat-align-tabs="center">
+    <!-- tab spese -->
+    <mat-tab label="Spese">
+        <mat-list class="list-item" role="list" *ngIf="!isLoading">
+            <div *ngFor="let c of allCategoryExit" class="card-item">
+                <mat-list-item class="item-content"  role="listitem">
+                    <mat-icon color="accent">category</mat-icon>
+                </mat-list-item>
+                <div class="label-container">
+                    <span>{{c.Name}}</span>
+                </div>
+            </div>
+            <div class="card-item">
+                <mat-list-item class="item-content-add"  role="listitem">
+                    <button mat-icon-button (click)="addCategory()">
+                        <mat-icon color="primary">add</mat-icon>
+                    </button>                     
+                </mat-list-item>
+                <div class="label-container">
+                    <span>Aggiungi</span>
+                </div>
+            </div>
+        </mat-list>
+        <div  class="spinner" *ngIf="isLoading">
+            <mat-progress-spinner 
+               
+                color="accent" 
+                mode="indeterminate">
+            </mat-progress-spinner>
+        </div>  
+    </mat-tab>
+    <mat-tab label="Entrate"> 
+        <!-- tab entrate -->
+        <mat-list class="list-item" role="list" *ngIf="!isLoading">
+            <div *ngFor="let c of allCategoryEntry" class="card-item">
+                <mat-list-item class="item-content"  role="listitem">
+                    <mat-icon color="accent">category</mat-icon>
+                </mat-list-item>
+                <div class="label-container">
+                    <span>{{c.Name}}</span>
+                </div>
+            </div>
+            <div class="card-item">
+                <mat-list-item class="item-content-add"  role="listitem">
+                    <button mat-icon-button (click)="addCategory()">
+                        <mat-icon color="primary">add</mat-icon>
+                    </button>                     
+                </mat-list-item>
+                <div class="label-container">
+                    <span>Aggiungi</span>
+                </div>
+            </div>
+        </mat-list>
+        <div  class="spinner" *ngIf="isLoading">
+            <mat-progress-spinner 
+               
+                color="accent" 
+                mode="indeterminate">
+            </mat-progress-spinner>
+        </div>  
+    </mat-tab>
+  </mat-tab-group>

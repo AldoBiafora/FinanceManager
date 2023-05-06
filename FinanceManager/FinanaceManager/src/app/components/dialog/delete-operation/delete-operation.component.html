@@ -1,0 +1,13 @@
+<div class="wrapper-header">
+    <p class="title-custom">Elimina Movimento</p>
+    <button mat-icon-button color="accent" [mat-dialog-close]="false">
+        <mat-icon>clear</mat-icon>
+    </button>
+</div>
+<hr color="#ff4081">
+<div class="container">
+    <p class="p-custom">Sei sicuro di voler eliminare questo movimento?</p>
+    <div class="btn-container">
+        <button class="btn-custom" color="accent" mat-raised-button (click)="onSubmit()">Elimina Movimento</button>
+    </div>
+</div>

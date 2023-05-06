@@ -1,0 +1,61 @@
+<div class="container-btn-add">
+    <button class="btn-custom" color="accent" mat-raised-button >Aggiungi Utente</button>
+</div>
+
+<!-- Tabella movimenti -->
+
+<div class="wrapper-table">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" class="full-width-table" matSort (matSortChange)="sortData($event)">
+
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef> Id Utente </th>
+          <td mat-cell *matCellDef="let element"> {{element.UserId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="whenCreated">
+          <th mat-header-cell *matHeaderCellDef> Username </th>
+          <td mat-cell *matCellDef="let element"> {{element.Username}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Total">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.Email }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Type">
+          <th mat-header-cell *matHeaderCellDef> Ruolo </th>
+          <td mat-cell *matCellDef="let element"> {{element.Role}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Action">
+          <th mat-header-cell *matHeaderCellDef> Azioni </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="accent" (click)="deleteUser(element.UserId)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button color="accent">
+                <mat-icon>edit</mat-icon>
+              </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div *ngIf="isLoading" class="spinner-custom">
+        <mat-progress-spinner color="accent"
+                              mode="indeterminate"
+                              class="mx-auto">
+        </mat-progress-spinner>
+      </div>
+      <mat-paginator 
+                    color="accent"
+                    #paginator
+                     [length]="resultLength"
+                     [pageSizeOptions]="[8, 16, 24]"
+                     showFirstLastButtons="true"
+                     (page)="pageEvent = $event">
+      </mat-paginator>
+    </div>
+  </div>
